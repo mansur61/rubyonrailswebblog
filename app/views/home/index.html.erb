@@ -1,0 +1,45 @@
+<br>
+<br>
+<br>
+
+
+<div class="row g-0">
+	<div class="col-sm-6 col-md-4 flex mr-2" style="border:1px solid lightgray;height: 550px;">
+
+		<h3 style="text-align: center">BİLGİLENDİRME</h3>
+		<p style="font-size: 18px">
+
+			Yapılan bu blog uygulaması <a href="http://rubyonrails.org/">http://rubyonrails.org/</a> ve daha çok <a href="http://medium.com/">http://medium.com/</a> mantığının birleşimine benzer bir uygulama mantığı çerçevesinde yapılmaya çalışılmıştır. Her Login olan kişiler blog ekleyebilecek ve eklenen bu bloglar anasayfa akışında herkese açık olacak. İlgili uygulamaya girildiğinde akışta bulunan ilgili bloğa gidip detaylı bir şekilde bloğu okuyabileceklerdir.
+			Arama kısmında blog konusu olarak aratma yapılarak arana bloğun bulunması sağlanmıştır.
+			Vaka çalışmasında öğrenmeye başladığım teknoloji olarak öğrenilen Ruby'de Rails freamworkü ile geliştirilen bu Küçük çapta blog uygulaması beni memnun etmiştir.
+			Henüz başlangıç seviyesinde olmama binaen temellerini kavrayarak gerçekleştirlen junior medium uygulamasını incelemeniz beni daha da mutlu edecektir.
+
+			<br>
+			İlgili blog örnekleri <a href="https://kenanatmaca.com">https://kenanatmaca.com</a>	  sitesinden alınmıştır.
+			<br>
+			<strong>Umarım birlikte daha güzel işler yaparız.</strong>
+		</p>
+			
+
+	</div>
+	<div class="col-6 col-md-7">
+		
+		<% @blogs.each do |blog| %>
+		<div class="card border-info mb-3" style="max-width: 50rem;">
+			<div class="card-header"> <strong>Blog Konusu: </strong>
+				<%= blog.baslik %></div>			
+
+				<div class="card-body">
+					<h5 class="card-title"></h5>
+					<p class="card-text" style="overflow: hidden;height: 100px"><%= blog.icerik %>
+					</p>
+				</div>
+				<%= link_to 'Bloğa Git',  home_path(blog.id), to: 'home#show',class:"btn btn-info" %>
+
+			</div>
+
+			<% end %>
+
+
+		</div>
+	</div>

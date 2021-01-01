@@ -1,0 +1,40 @@
+<br>
+<h1 style="text-align: center">Aranan Bloglar</h1>
+<br>
+
+
+<% if !params[:q].blank?  %>
+
+<div class="row" >
+
+<div class="col-6 col-md-7" style="margin: 5px auto">
+	
+		<% @results.each do |result| %>  
+
+	
+		<div class="card border-info mb-3" style="max-width: 50rem;">
+			<div class="card-header"> <strong>Blog Konusu: </strong>
+				<%= result.baslik %></div>			
+
+				<div class="card-body">
+					<h5 class="card-title"></h5>
+					<p class="card-text" style="overflow: hidden;height: 100px"><%= result.icerik %>
+					</p>
+				</div>
+				<%= link_to 'Bloğa Git',  home_path(result.id), to: 'home#show',class:"btn btn-info" %>
+
+			</div>
+
+			<% end %>
+
+
+		</div>
+</div>
+
+<% else  %>
+
+<div class="alert alert-warning" role="alert">
+	Herhangi bir blog bulunamadı !.
+</div>
+
+<% end %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bloglar</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Baslik</th>
+      <th>Icerik</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+
+        <td><%= blog.baslik %></td>
+        <td><%= blog.icerik %></td>
+        <td><%= link_to 'Göster', blog ,class:"btn btn-dark"%></td>
+        <td><%= link_to 'Düzenle', edit_blog_path(blog) ,class:"btn btn-dark" %></td>
+        <td><%= link_to 'Sil', blog, method: :delete, data: { confirm: 'Emin misiniz?' },class:"btn btn-dark" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

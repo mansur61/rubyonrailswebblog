@@ -1,0 +1,38 @@
+
+<br><br>
+
+<% if  notice %>
+	<p id="notice" class="alert alert-success"><%= notice %></p>
+<% else %>
+	
+<% end %>
+
+
+
+<h3>Yeni Eklenen Bloğu Göster</h3>
+
+<br>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Baslik</th>
+			<th>Icerik</th>
+
+		</tr>
+	</thead>
+
+	<tbody>
+
+		<tr>
+
+			<td><%= @blog.baslik %></td>
+			<td><%= @blog.icerik  %></td>
+
+		</tr>
+
+	</tbody>
+</table>
+
+
+<%= link_to 'Düzenle', edit_blog_path(@blog), class:"btn btn-secondary " %> |
+<%= link_to 'Tüm Bloglar', blogs_path, class:"btn btn-secondary" %>
